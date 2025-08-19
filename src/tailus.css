@@ -4,4 +4,8 @@
     --color-primary : var(--color-indigo-600);
     --color-secondary : var(--color-orange-600);
     --color-info : var(--color-blue-600);
+    --color-whiteds: #e8e8e8;
+    --color-bluedsa: #0e265b;
+    --color-bluedsb: #0f2969;
+    --color-bluedsc: #11307A;
 }

@@ -3,19 +3,15 @@ import Container from "./Container.astro";
 const links = [
     {
         to: "/#features",
-        label: "Features",
+        label: "Características",
     },
     {
         to: "/#solution",
-        label: "Solution",
+        label: "Soluciones",
     },
     {
         to: "/#reviews",
-        label: "Reviews",
-    },
-    {
-        to: "https://github.com/luasenvy/nextjs-astro-theme",
-        label: "NextJS Version",
+        label: "Reseñas",
     },
 ];
 ---
@@ -27,10 +23,9 @@ const links = [
                 <div class="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
                     <a href="/#home" aria-label="logo" class="flex items-center space-x-2">
                         <div aria-hidden="true" class="flex space-x-1">
-                            <div class="size-4 rounded-full bg-gray-900 dark:bg-white"></div>
-                            <div class="h-6 w-2 bg-primary"></div>
+                            <img class="w-10" src="../../images/logo.svg" alt="Logo">
                         </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">Astrolus</span>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">DealStudio</span>
                     </a>
 
                     <div class="relative flex max-h-10 items-center lg:hidden">
@@ -51,16 +46,12 @@ const links = [
                                     </a>
                                 ))
                             }
-                            <a href="https://tailtips.dev" target="_blank" class="flex gap-2 font-semibold text-gray-700 transition hover:text-primary dark:text-white dark:hover:text-white md:px-4">
-                                <span>TailwindCSS Tips</span>
-                                <span class="flex rounded-full border bg-primary/20 px-2 py-0.5 text-xs tracking-wider text-purple-700 dark:bg-white/10 dark:text-orange-300">New</span>
-                            </a>
                         </div>
                     </div>
 
                     <div class="mt-12 lg:mt-0">
-                        <a href="/register" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                            <span class="relative text-sm font-semibold text-white"> Get Started</span>
+                        <a href="/register" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-bluedsc before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                            <span class="relative text-sm font-semibold text-white"> Contáctanos</span>
                         </a>
                     </div>
                 </div>
