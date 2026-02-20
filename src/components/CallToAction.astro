@@ -1,80 +1,56 @@
 ---
 import Container from "./Container.astro"
-
 ---
 
-<div class="relative py-16">
-  <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
-    <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
-    <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+<div class="relative py-24">
+  <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-30">
+    <div class="blur-[120px] h-64 bg-gradient-to-br from-bluedsc to-purple-500 dark:from-blue-700"></div>
+    <div class="blur-[120px] h-40 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
   </div>
+
   <Container>
     <div class="relative">
-      <div class="flex items-center justify-center -space-x-2">
-        <img
-          loading="lazy"
-          width="400"
-          height="400"
-          src="./images/avatars/avatar.webp"
-          alt="member photo"
-          class="h-8 w-8 rounded-full object-cover"
-        />
-        <img
-          loading="lazy"
-          width="200"
-          height="200"
-          src="./images/avatars/avatar-2.webp"
-          alt="member photo"
-          class="h-12 w-12 rounded-full object-cover"
-        />
-        <img
-          loading="lazy"
-          width="200"
-          height="200"
-          src="./images/avatars/avatar-3.webp"
-          alt="member photo"
-          class="z-10 h-16 w-16 rounded-full object-cover"
-        />
-        <img
-          loading="lazy"
-          width="200"
-          height="200"
-          src="./images/avatars/avatar-4.webp"
-          alt="member photo"
-          class="relative h-12 w-12 rounded-full object-cover"
-        />
-        <img
-          loading="lazy"
-          width="200"
-          height="200"
-          src="./images/avatars/avatar-1.webp"
-          alt="member photo"
-          class="h-8 w-8 rounded-full object-cover"
-        />
-      </div>
-      <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
-        <h1 class="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">Cotiza tu <span class="text-bluedsc dark:text-blue-700">software</span> ahora</h1>
-        <p class="text-center text-xl text-gray-600 dark:text-gray-300">
-          Sé parte de la gente que optimizó y ganó en sus negocios, confiando en nosotros
-        </p>
-        <div class="flex flex-wrap justify-center gap-6">
-          <a
-              href="https://wa.me/4424220140"
-              class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-bluedsc before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+      <div class="relative rounded-[3rem] border border-gray-100 dark:border-white/10 bg-white/40 dark:bg-gray-900/40 backdrop-blur-3xl px-8 py-16 shadow-2xl shadow-gray-600/10 dark:shadow-none overflow-hidden">
+        
+        <div class="absolute -top-24 -right-24 w-64 h-64 bg-bluedsc/10 rounded-full blur-3xl"></div>
+        
+        <div class="relative m-auto space-y-8 md:w-10/12 lg:w-8/12 text-center">
+          <h2 class="text-4xl font-extrabold text-gray-900 dark:text-white md:text-6xl leading-tight">
+            ¿Listo para llevar tu negocio al <span class="text-transparent bg-clip-text bg-gradient-to-r from-bluedsc to-cyan-500 dark:from-blue-400 dark:to-cyan-300">futuro digital?</span>
+          </h2>
+          
+          <p class="text-xl text-gray-700 dark:text-gray-300 max-w-xl mx-auto">
+            Únete a las empresas que ya han optimizado su operación y blindado su seguridad con la experiencia integral de <strong>DealStudio</strong>.
+          </p>
+
+          <div class="flex flex-wrap justify-center gap-6">
+            <a
+              href="https://wa.me/4425573314"
+              class="group relative flex h-14 w-full items-center justify-center px-8 transition-all duration-300 sm:w-max"
             >
-              <span class="relative text-base font-semibold text-white dark:text-dark"
-                >Contáctanos</span
-              >
+              <div class="absolute inset-0 rounded-full bg-bluedsc transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-blue-500/30"></div>
+              <span class="relative flex items-center gap-2 text-base font-bold text-white">
+                Cotizar mi proyecto
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
             </a>
+
             <a
               href="/#features"
-              class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max"
+              class="group relative flex h-14 w-full items-center justify-center px-8 transition-all duration-300 sm:w-max"
             >
-              <span
-                class="relative text-base font-semibold text-bluedsc dark:text-white"
-                >Ver más</span
-              >
-          </a>
+              <div class="absolute inset-0 rounded-full border border-gray-300 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-transform duration-300 group-hover:scale-105"></div>
+              <span class="relative text-base font-bold text-gray-700 dark:text-white">
+                Explorar servicios
+              </span>
+            </a>
+          </div>
+          
+          <p class="text-sm text-gray-500 dark:text-gray-400 pt-4">
+             Respuesta inmediata por WhatsApp · Sin compromisos
+          </p>
         </div>
       </div>
     </div>

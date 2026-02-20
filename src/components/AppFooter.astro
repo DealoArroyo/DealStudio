@@ -2,42 +2,72 @@
 import Container from "./Container.astro";
 ---
 
-<footer class="py-20 md:py-40 bg-gray-50 dark:bg-gray-900">
+<footer class="py-20 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
   <Container>
-    <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
-      <div class="flex flex-wrap justify-between gap-10 md:gap-20">
-
-        <!-- Navegación -->
-        <div class="w-full sm:w-7/12">
-          <div class="grid grid-cols-2 gap-y-4 gap-x-12 text-gray-600 dark:text-gray-300">
-            <a href="#" class="transition hover:text-primary">Inicio</a>
-            <a href="#" class="transition hover:text-primary">Características</a>
-            <a href="#" class="transition hover:text-primary">Soluciones</a>
-            <a href="#" class="transition hover:text-primary">Reseñas</a>
-            <a href="#" class="transition hover:text-primary">Contacto</a>
-          </div>
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-4 lg:grid-cols-5">
+      
+      <div class="md:col-span-2 lg:col-span-2 space-y-6">
+        <a href="/#home" class="flex items-center space-x-3">
+          <img class="w-10" src="../../images/logo.svg" alt="Logo DealStudio">
+          <span class="text-2xl font-bold text-gray-900 dark:text-white">DealStudio</span>
+        </a>
+        <p class="text-gray-600 dark:text-gray-400 max-w-sm text-balance">
+          Elevamos el potencial de tu empresa mediante desarrollo de software estratégico y sistemas de seguridad inteligentes. Innovación que protege tu éxito.
+        </p>
+        <div class="flex gap-4">
+            <span class="text-sm text-gray-500">Queretaro, México.</span>
         </div>
-
-        <!-- Información secundaria -->
-        <div class="w-full sm:w-5/12 space-y-4 text-center sm:text-left">
-          <span class="block text-gray-500 dark:text-gray-400">
-            DealStudio &copy; <span id="year"></span>
-          </span>
-
-          <div class="flex flex-wrap justify-center gap-6 sm:justify-start text-gray-600 dark:text-white">
-            <a href="/Terminos_de_uso.pdf" download class="font-medium hover:text-primary">Términos de uso</a>
-            <a href="/Politicas_de_privacidad.pdf" download class="font-medium hover:text-primary">Política de privacidad</a>
-          </div>
-
-          <span class="block text-gray-500 dark:text-gray-400">
-            ¿Necesitas ayuda?
-            <a href="https://wa.me/4424220140" class="font-semibold text-gray-600 dark:text-white hover:text-primary">
-              Contáctanos
-            </a>
-          </span>
-        </div>
-
       </div>
+
+      <div class="space-y-6">
+        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Empresa</h6>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+          <li><a href="/#home" class="transition hover:text-bluedsc">Inicio</a></li>
+          <li><a href="/#features" class="transition hover:text-bluedsc">Características</a></li>
+          <li><a href="https://wa.me/4425573314" class="transition hover:text-bluedsc">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-6">
+        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Servicios</h6>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-400">
+          <li><a href="/software" class="transition hover:text-bluedsc">Desarrollo Web</a></li>
+          <li><a href="/software" class="transition hover:text-bluedsc">Apps Móviles</a></li>
+          <li><a href="/seguridad" class="transition hover:text-bluedsc">Cámaras CCTV</a></li>
+          <li><a href="/seguridad" class="transition hover:text-bluedsc">Mantenimiento</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-6">
+        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Legal</h6>
+        <ul class="space-y-4 text-gray-600 dark:text-gray-400 text-sm">
+          <li><a href="/Terminos_de_uso.pdf" download class="transition hover:text-bluedsc">Términos de uso</a></li>
+          <li><a href="/Politicas_de_privacidad.pdf" download class="transition hover:text-bluedsc">Privacidad</a></li>
+          <li class="pt-2">
+            <span class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Soporte directo</span>
+            <a href="https://wa.me/4425573314" class="font-bold text-gray-900 dark:text-white hover:text-bluedsc transition">
+              +52 442 557 3314
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-20 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        &copy; <span id="year"></span> DealStudio. Todos los derechos reservados.
+      </span>
+      <span class="text-sm text-gray-400">
+        Diseñado con enfoque en rendimiento y seguridad.
+      </span>
     </div>
   </Container>
 </footer>
+
+<script>
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear().toString();
+    }
+</script>
