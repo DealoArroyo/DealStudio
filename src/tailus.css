@@ -1,11 +1,141 @@
 @import 'tailwindcss';
 
+/* Modo oscuro por clase (.dark en <html>) con toggle manual */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   DealStudio — Sistema de diseño (Seguridad / Videovigilancia)
+   Patrón: Trust & Authority + Conversion
+   Navy corporativo + acento cian tecnológico + señal "REC/live"
+   ============================================================ */
+
 @theme {
-    --color-primary : var(--color-indigo-600);
-    --color-secondary : var(--color-orange-600);
-    --color-info : var(--color-blue-600);
+    /* Marca */
+    --color-primary: #11307A;      /* Navy DealStudio */
+    --color-info: var(--color-blue-600);
+    --color-secondary: var(--color-orange-600);
+
+    /* Legacy (compatibilidad) */
     --color-whiteds: #e8e8e8;
     --color-bluedsa: #0e265b;
     --color-bluedsb: #0f2969;
     --color-bluedsc: #11307A;
+
+    /* Escala navy de marca */
+    --color-brand-50:  #eef3ff;
+    --color-brand-100: #dbe4ff;
+    --color-brand-200: #bccdff;
+    --color-brand-300: #8ea9ff;
+    --color-brand-400: #5878fb;
+    --color-brand-500: #324ef2;
+    --color-brand-600: #1f31de;
+    --color-brand-700: #1a26b4;
+    --color-brand-800: #1b248f;
+    --color-brand-900: #11307A;   /* navy principal */
+    --color-brand-950: #0a1745;
+
+    /* Acento cian tecnológico (señal "en línea") */
+    --color-cyanx-300: #7de3ff;
+    --color-cyanx-400: #38cfff;
+    --color-cyanx-500: #06b6d4;
+    --color-cyanx-600: #0891b2;
+
+    /* Señal REC / grabando */
+    --color-live: #ff3b46;
+
+    /* Fuentes */
+    --font-sans: 'Lexend', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+
+    /* Sombras suaves (Soft UI Evolution) */
+    --shadow-soft: 0 1px 2px rgba(10, 23, 69, 0.04), 0 8px 24px rgba(10, 23, 69, 0.06);
+    --shadow-soft-lg: 0 2px 4px rgba(10, 23, 69, 0.05), 0 24px 48px rgba(10, 23, 69, 0.10);
+    --shadow-glow: 0 0 0 1px rgba(56, 207, 255, 0.15), 0 12px 40px rgba(17, 48, 122, 0.25);
+}
+
+html {
+    font-family: var(--font-body);
+}
+
+/* --- Lenis (smooth scroll) --- */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* --- Estado inicial para animaciones Motion (evita flash antes de JS) --- */
+[data-anim] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Si el usuario prefiere menos movimiento o JS falla, mostramos todo */
+@media (prefers-reduced-motion: reduce) {
+    [data-anim] { opacity: 1 !important; transform: none !important; }
+    html { scroll-behavior: auto; }
+}
+.no-js [data-anim] { opacity: 1; }
+
+/* --- Motivos visuales de videovigilancia --- */
+
+/* Punto REC parpadeante */
+@keyframes rec-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.35; transform: scale(0.85); }
+}
+.rec-dot {
+    animation: rec-pulse 1.4s ease-in-out infinite;
+}
+
+/* Línea de escaneo que recorre un panel */
+@keyframes scanline {
+    0%   { transform: translateY(-100%); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 1; }
+    100% { transform: translateY(1200%); opacity: 0; }
+}
+.scanline {
+    animation: scanline 3.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Anillo de pulso (radar / detección) */
+@keyframes radar-ping {
+    0%   { transform: scale(0.6); opacity: 0.7; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+.radar-ping { animation: radar-ping 2.8s ease-out infinite; }
+
+/* Rejilla técnica sutil de fondo */
+.grid-tech {
+    background-image:
+        linear-gradient(to right, rgba(56, 207, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 207, 255, 0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rec-dot, .scanline, .radar-ping { animation: none; }
 }

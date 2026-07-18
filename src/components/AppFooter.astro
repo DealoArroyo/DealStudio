@@ -1,73 +1,83 @@
 ---
 import Container from "./Container.astro";
+
+const servicios = [
+  { to: "/#servicios", label: "Cámaras para negocios" },
+  { to: "/#servicios", label: "Cámaras residenciales" },
+  { to: "/#servicios", label: "Sistemas CCTV" },
+  { to: "/#servicios", label: "Monitoreo remoto" },
+  { to: "/#servicios", label: "Control de acceso" },
+];
+
+const navegacion = [
+  { to: "/#inicio", label: "Inicio" },
+  { to: "/#paquetes", label: "Paquetes" },
+  { to: "/#beneficios", label: "Beneficios" },
+  { to: "/#proceso", label: "Proceso" },
+  { to: "/#faq", label: "Preguntas frecuentes" },
+];
 ---
 
-<footer class="py-20 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800">
+<footer class="border-t border-slate-100 bg-white dark:border-white/10 dark:bg-brand-950">
   <Container>
-    <div class="grid grid-cols-1 gap-12 md:grid-cols-4 lg:grid-cols-5">
-      
-      <div class="md:col-span-2 lg:col-span-2 space-y-6">
-        <a href="/#home" class="flex items-center space-x-3">
-          <img class="w-10" src="../../images/logo.svg" alt="Logo DealStudio">
-          <span class="text-2xl font-bold text-gray-900 dark:text-white">DealStudio</span>
+    <div class="grid grid-cols-2 gap-10 py-16 md:grid-cols-4 lg:grid-cols-5">
+      <div class="col-span-2 space-y-5">
+        <a href="/#inicio" class="flex items-center space-x-2.5">
+          <img class="w-9" src="/images/logo.svg" alt="Logo DealStudio" width="36" height="36" />
+          <span class="text-xl font-bold text-slate-900 dark:text-white">DealStudio</span>
         </a>
-        <p class="text-gray-600 dark:text-gray-400 max-w-sm text-balance">
-          Elevamos el potencial de tu empresa mediante desarrollo de software estratégico y sistemas de seguridad inteligentes. Innovación que protege tu éxito.
+        <p class="max-w-sm text-sm text-slate-600 dark:text-slate-400">
+          Instalación de cámaras de seguridad y sistemas de videovigilancia CCTV en Querétaro.
+          Protegemos tu casa y tu negocio con tecnología de alta gama y soporte cercano.
         </p>
-        <div class="flex gap-4">
-            <span class="text-sm text-gray-500">Queretaro, México.</span>
+        <div class="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11Zm0-8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg>
+          Querétaro, México
         </div>
       </div>
 
-      <div class="space-y-6">
-        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Empresa</h6>
-        <ul class="space-y-4 text-gray-600 dark:text-gray-400">
-          <li><a href="/#home" class="transition hover:text-bluedsc">Inicio</a></li>
-          <li><a href="/#features" class="transition hover:text-bluedsc">Características</a></li>
-          <li><a href="https://wa.me/4425573314" class="transition hover:text-bluedsc">Contacto</a></li>
+      <div class="space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Servicios</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+          {servicios.map((s) => <li><a href={s.to} class="transition hover:text-brand-900 dark:hover:text-cyanx-300">{s.label}</a></li>)}
         </ul>
       </div>
 
-      <div class="space-y-6">
-        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Servicios</h6>
-        <ul class="space-y-4 text-gray-600 dark:text-gray-400">
-          <li><a href="/software" class="transition hover:text-bluedsc">Desarrollo Web</a></li>
-          <li><a href="/software" class="transition hover:text-bluedsc">Apps Móviles</a></li>
-          <li><a href="/seguridad" class="transition hover:text-bluedsc">Cámaras CCTV</a></li>
-          <li><a href="/seguridad" class="transition hover:text-bluedsc">Mantenimiento</a></li>
+      <div class="space-y-4">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Navegación</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+          {navegacion.map((n) => <li><a href={n.to} class="transition hover:text-brand-900 dark:hover:text-cyanx-300">{n.label}</a></li>)}
         </ul>
       </div>
 
-      <div class="space-y-6">
-        <h6 class="text-lg font-bold text-gray-900 dark:text-white">Legal</h6>
-        <ul class="space-y-4 text-gray-600 dark:text-gray-400 text-sm">
-          <li><a href="/Terminos_de_uso.pdf" download class="transition hover:text-bluedsc">Términos de uso</a></li>
-          <li><a href="/Politicas_de_privacidad.pdf" download class="transition hover:text-bluedsc">Privacidad</a></li>
-          <li class="pt-2">
-            <span class="block text-xs uppercase tracking-widest text-gray-400 mb-2">Soporte directo</span>
-            <a href="https://wa.me/4425573314" class="font-bold text-gray-900 dark:text-white hover:text-bluedsc transition">
-              +52 442 557 3314
+      <div class="col-span-2 space-y-4 md:col-span-4 lg:col-span-1">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">Contacto</h3>
+        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+          <li>
+            <a href="https://wa.me/524425573314" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-semibold text-slate-900 transition hover:text-brand-900 dark:text-white dark:hover:text-cyanx-300">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.437-9.884 9.888-9.884a9.82 9.82 0 016.988 2.898 9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
+              WhatsApp
             </a>
+          </li>
+          <li><a href="tel:+524425573314" class="transition hover:text-brand-900 dark:hover:text-cyanx-300">+52 442 557 3314</a></li>
+          <li class="pt-2 flex gap-4">
+            <a href="/Terminos_de_uso.pdf" class="text-xs transition hover:text-brand-900 dark:hover:text-cyanx-300">Términos</a>
+            <a href="/Politicas_de_privacidad.pdf" class="text-xs transition hover:text-brand-900 dark:hover:text-cyanx-300">Privacidad</a>
           </li>
         </ul>
       </div>
-
     </div>
 
-    <div class="mt-20 pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-      <span class="text-sm text-gray-500 dark:text-gray-400">
+    <div class="flex flex-col items-center justify-between gap-3 border-t border-slate-100 py-8 dark:border-white/10 sm:flex-row">
+      <span class="text-sm text-slate-500 dark:text-slate-400">
         &copy; <span id="year"></span> DealStudio. Todos los derechos reservados.
       </span>
-      <span class="text-sm text-gray-400">
-        Diseñado con enfoque en rendimiento y seguridad.
-      </span>
+      <span class="text-sm text-slate-400 dark:text-slate-500">Cámaras de seguridad en Querétaro</span>
     </div>
   </Container>
 </footer>
 
 <script>
-    const yearSpan = document.getElementById("year");
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear().toString();
-    }
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear().toString();
 </script>

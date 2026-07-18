@@ -8,6 +8,12 @@ export default defineConfig({
   site: "https://dealstudio.com.mx",
   integrations: [sitemap()],
 
+  // Las páginas antiguas ahora se enfocan 100% en cámaras (SEO: 301 a home)
+  redirects: {
+    "/software": "/",
+    "/seguridad": "/",
+  },
+
   vite:{
     plugins: [
       tailwindcss()

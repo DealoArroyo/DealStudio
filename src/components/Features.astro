@@ -1,82 +1,85 @@
 ---
-import Container from "./Container.astro"
+import Container from "./Container.astro";
 ---
 
-<div id="features" class="py-20">
+<section id="beneficios" class="scroll-mt-24 py-20 md:py-28 bg-slate-50/70 dark:bg-white/[0.02]">
   <Container>
-    <div class="md:w-2/3 lg:w-1/2">
-      <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 mb-6">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-bluedsc">
-          <path fill-rule="evenodd" d="M9 4.5a.75.75 0 01.721.544l.813 2.846a3.75 3.75 0 002.576 2.576l2.846.813a.75.75 0 010 1.442l-2.846.813a3.75 3.75 0 00-2.576 2.576l-.813 2.846a.75.75 0 01-1.442 0l-.813-2.846a3.75 3.75 0 00-2.576-2.576l-2.846-.813a.75.75 0 010-1.442l2.846-.813A3.75 3.75 0 007.466 7.89l.813-2.846A.75.75 0 019 4.5zM18 1.5a.75.75 0 01.728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 010 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 01-1.456 0l-.258-1.036a2.625 2.625 0 00-1.91-1.91l-1.036-.258a.75.75 0 010-1.456l1.036-.258a2.625 2.625 0 001.91-1.91l.258-1.036A.75.75 0 0118 1.5zM16.5 15a.75.75 0 01.712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 010 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 01-1.422 0l-.395-1.183a1.5 1.5 0 00-.948-.948l-1.183-.395a.75.75 0 010-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0116.5 15z" clip-rule="evenodd" />
-        </svg>
-      </div>
-      
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl leading-tight">
-        Seguridad física y digital <br/> <span class="text-bluedsc dark:text-blue-400">unificadas en un solo lugar.</span>
+    <div class="mx-auto max-w-2xl text-center" data-anim-group data-anim="up">
+      <span data-anim class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+        Por qué elegirnos
+      </span>
+      <h2 data-anim class="mt-4 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
+        Tecnología que ve lo que otros no
       </h2>
-      <p class="mt-6 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-        Impulsamos el crecimiento sostenido de su negocio a través de seguridad inteligente, acompañamiento experto y mejora continua.
+      <p data-anim class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+        No solo colocamos cámaras: diseñamos una red de protección inteligente para tu tranquilidad.
       </p>
     </div>
-    
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      
-      <div class="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-900 shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
-        <div class="relative z-10 space-y-6">
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/30 transition-colors group-hover:bg-bluedsc">
-            <img src="../../images/bloqueado.png" class="w-6 transition-all group-hover:invert group-hover:brightness-0" alt="Seguridad" />
-          </div>
-          <div class="space-y-3">
-            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Seguridad</h5>
-            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Blindamos sus activos digitales y físicos. Aplicamos las mejores prácticas para prevenir vulnerabilidades.
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div class="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-900 shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
-        <div class="relative z-10 space-y-6">
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/30 transition-colors group-hover:bg-bluedsc">
-            <img src="../../images/seguimiento.png" class="w-6 transition-all group-hover:invert group-hover:brightness-0" alt="Seguimiento" />
+    <!-- Bento -->
+    <div class="mt-14 grid gap-5 lg:grid-cols-3 lg:grid-rows-2" data-anim-group data-anim="up">
+      <!-- Card destacada: visión nocturna -->
+      <article
+        data-anim
+        data-scroll-zoom-section
+        class="group relative row-span-2 overflow-hidden rounded-3xl border border-white/10 bg-slate-900 p-8 text-white shadow-soft-lg lg:col-span-1"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?auto=format&fit=crop&q=80&w=800"
+          alt="Cámara de seguridad con visión nocturna monitoreando de noche"
+          class="absolute inset-0 h-full w-full object-cover opacity-40"
+          data-scroll-zoom
+          loading="lazy"
+          width="800"
+          height="1000"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/70 to-transparent"></div>
+        <div class="relative flex h-full min-h-[280px] flex-col justify-end">
+          <div class="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-cyanx-500/20 px-3 py-1 text-xs font-semibold text-cyanx-200 ring-1 ring-inset ring-cyanx-400/30">
+            <span class="rec-dot h-1.5 w-1.5 rounded-full bg-cyanx-300"></span> Night Vision
           </div>
-          <div class="space-y-3">
-            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Compromiso</h5>
-            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Su visión es nuestra prioridad. Mantenemos una comunicación constante para evolucionar con sus metas.
-            </p>
-          </div>
+          <h3 class="text-2xl font-bold">Visión nocturna a color</h3>
+          <p class="mt-2 text-sm text-slate-200/90">
+            Imágenes nítidas incluso en total oscuridad, con tecnología infrarroja y Full-Color. La noche ya no es tu punto ciego.
+          </p>
         </div>
-      </div>
+      </article>
 
-      <div class="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-900 shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
-        <div class="relative z-10 space-y-6">
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/30 transition-colors group-hover:bg-bluedsc">
-            <img src="../../images/soporte.png" class="w-6 transition-all group-hover:invert group-hover:brightness-0" alt="Soporte" />
-          </div>
-          <div class="space-y-3">
-            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Capacitación</h5>
-            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Asesoría técnica personalizada para que su equipo domine cada aspecto de sus nuevos sistemas.
-            </p>
-          </div>
+      <!-- Acceso móvil -->
+      <article data-anim class="rounded-3xl border border-slate-100 bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg dark:border-white/10 dark:bg-slate-900/60">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm4 15h2"/></svg>
         </div>
-      </div>
+        <h3 class="mt-4 text-lg font-bold text-slate-900 dark:text-white">Acceso desde tu celular</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Mira tus cámaras en vivo desde cualquier parte del mundo, en tu teléfono o tablet.</p>
+      </article>
 
-      <div class="group relative overflow-hidden rounded-3xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-900 shadow-sm hover:shadow-xl hover:shadow-blue-900/5">
-        <div class="relative z-10 space-y-6">
-          <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-900/30 transition-colors group-hover:bg-bluedsc">
-            <img src="../../images/mantenimiento.png" class="w-6 transition-all group-hover:invert group-hover:brightness-0" alt="Mantenimiento" />
-          </div>
-          <div class="space-y-3">
-            <h5 class="text-xl font-bold text-gray-900 dark:text-white">Continuidad</h5>
-            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-              Garantizamos que su infraestructura se mantenga operativa, actualizada y adaptada a su industria.
-            </p>
-          </div>
+      <!-- Alertas IA -->
+      <article data-anim class="rounded-3xl border border-slate-100 bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg dark:border-white/10 dark:bg-slate-900/60">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg>
         </div>
-      </div>
+        <h3 class="mt-4 text-lg font-bold text-slate-900 dark:text-white">Alertas inteligentes</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Detección de personas y cruce de línea con IA. Notificaciones al instante, sin falsas alarmas.</p>
+      </article>
 
+      <!-- Respaldo nube -->
+      <article data-anim class="rounded-3xl border border-slate-100 bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg dark:border-white/10 dark:bg-slate-900/60">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 18z"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-slate-900 dark:text-white">Respaldo en la nube</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Grabación local y en la nube. Tu evidencia siempre protegida, aunque se lleven el equipo.</p>
+      </article>
+
+      <!-- Instalación limpia -->
+      <article data-anim class="rounded-3xl border border-slate-100 bg-white p-7 shadow-soft transition hover:-translate-y-1 hover:shadow-soft-lg dark:border-white/10 dark:bg-slate-900/60">
+        <div class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="m5 13 4 4L19 7"/></svg>
+        </div>
+        <h3 class="mt-4 text-lg font-bold text-slate-900 dark:text-white">Instalación limpia</h3>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">Cableado estructurado y oculto. Acabados profesionales que respetan la estética de tu propiedad.</p>
+      </article>
     </div>
   </Container>
-</div>
+</section>

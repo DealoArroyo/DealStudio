@@ -1,17 +1,27 @@
 ---
-import Stats from '../components/Stats.astro';
-import Features from '../components/Features.astro';
-import HeroSection from '../components/HeroSection.astro';
-import Layout from '../layouts/Layout.astro';
-import Testimonials from '../components/Testimonials.astro';
-import CallToAction from '../components/CallToAction.astro';
+import Layout from "../layouts/Layout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import Services from "../components/Services.astro";
+import Paquetes from "../components/Paquetes.astro";
+import Features from "../components/Features.astro";
+import Process from "../components/Process.astro";
+import Stats from "../components/Stats.astro";
+import Faq from "../components/Faq.astro";
+import CallToAction from "../components/CallToAction.astro";
 ---
 
-<Layout title="Welcome to Astrolus.">
-	<main class="space-y-40 mb-40">
-		<HeroSection/>
-		<Features/>
-		<Stats/>
-		<CallToAction/>
-	</main>
+<Layout
+  title="Cámaras de Seguridad en Querétaro | Instalación CCTV — DealStudio"
+  description="Instalación de cámaras de seguridad y CCTV en Querétaro. Videovigilancia con acceso desde tu celular, visión nocturna y alertas inteligentes. Cotización gratis por WhatsApp."
+>
+  <main>
+    <HeroSection />
+    <Services />
+    <Paquetes />
+    <Features />
+    <Process />
+    <Stats />
+    <Faq />
+    <CallToAction />
+  </main>
 </Layout>

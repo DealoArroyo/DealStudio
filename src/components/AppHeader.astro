@@ -2,115 +2,130 @@
 import Container from "./Container.astro";
 
 const links = [
-    {
-        to: "/#inicio",
-        label: "Inicio",
-    },
-    {
-        to: "/#features",
-        label: "Características",
-    },
-    {
-        label: "Soluciones",
-        children: [
-            { to: "/software", label: "Desarrollo de Software" },
-            { to: "/seguridad", label: "Cámaras de Seguridad" }
-        ]
-    },
+  { to: "/#inicio", label: "Inicio" },
+  { to: "/#servicios", label: "Servicios" },
+  { to: "/#paquetes", label: "Paquetes" },
+  { to: "/#beneficios", label: "Beneficios" },
+  { to: "/#proceso", label: "Proceso" },
+  { to: "/#faq", label: "Preguntas" },
 ];
 ---
 
 <header>
-    <nav id="nav" class="absolute group z-30 w-full border-b border-black/5 dark:border-white/5 lg:border-transparent">
-        <Container>
-            <div class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
-                <div class="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
-                    <a href="/#home" aria-label="logo" class="flex items-center space-x-2">
-                        <div aria-hidden="true" class="flex space-x-1">
-                            <img class="w-10" src="../../images/logo.svg" alt="Logo">
-                        </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">DealStudio</span>
+  <nav
+    id="nav"
+    class="group fixed top-0 z-40 w-full transition-all duration-300 data-[scrolled=true]:border-b data-[scrolled=true]:border-slate-200/70 data-[scrolled=true]:bg-white/80 data-[scrolled=true]:backdrop-blur-xl dark:data-[scrolled=true]:border-white/10 dark:data-[scrolled=true]:bg-brand-950/80"
+  >
+    <Container>
+      <div class="relative flex flex-wrap items-center justify-between gap-6 py-3 md:gap-0 md:py-4">
+        <div class="relative z-20 flex w-full justify-between md:px-0 lg:w-fit">
+          <a href="/#inicio" aria-label="DealStudio — inicio" class="flex items-center space-x-2">
+            <img class="w-9" src="/images/logo.svg" alt="Logo DealStudio" width="36" height="36" />
+            <span class="text-xl font-bold text-slate-900 dark:text-white">DealStudio</span>
+          </a>
+
+          <div class="flex items-center gap-1 lg:hidden">
+            <button
+              id="theme-toggle-m"
+              aria-label="Cambiar tema"
+              class="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5"
+            >
+              <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.4 6.4-1.4-1.4M7 7 5.6 5.6m12.8 0L17 7M7 17l-1.4 1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+              <svg class="block h-5 w-5 dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+            </button>
+            <button aria-label="Menú" id="hamburger" class="relative -mr-2 p-3 active:scale-95 duration-300">
+              <div id="line" class="m-auto h-0.5 w-6 rounded bg-slate-900 transition duration-300 dark:bg-white origin-top group-data-[state=active]:rotate-45 group-data-[state=active]:translate-y-1.5"></div>
+              <div id="line2" class="m-auto mt-1.5 h-0.5 w-6 rounded bg-slate-900 transition duration-300 dark:bg-white origin-bottom group-data-[state=active]:-rotate-45 group-data-[state=active]:-translate-y-1"></div>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="navLayer"
+          aria-hidden="true"
+          class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/80 backdrop-blur-2xl transition duration-500 group-data-[state=active]:origin-top group-data-[state=active]:scale-y-100 dark:bg-brand-950/90 lg:hidden"
+        >
+        </div>
+
+        <div
+          id="navlinks"
+          class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-slate-100 bg-white p-8 opacity-0 shadow-2xl shadow-slate-600/10 transition-all duration-300 dark:border-white/10 dark:bg-slate-900 lg:visible lg:relative lg:flex lg:w-fit lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none group-data-[state=active]:visible group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 lg:group-data-[state=active]:translate-y-0"
+        >
+          <div class="w-full text-slate-600 dark:text-slate-200 lg:w-auto lg:pr-4">
+            <ul class="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-1 lg:text-sm">
+              {
+                links.map((link) => (
+                  <li>
+                    <a
+                      href={link.to}
+                      class="block rounded-full px-4 py-2 font-medium transition hover:bg-brand-50 hover:text-brand-900 data-[active]:bg-brand-50 data-[active]:text-brand-900 dark:hover:bg-white/5 dark:hover:text-white dark:data-[active]:bg-white/10 dark:data-[active]:text-white"
+                    >
+                      {link.label}
                     </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
-                    <div class="relative flex max-h-10 items-center lg:hidden">
-                        <button aria-label="humburger" id="hamburger" class="relative -mr-6 p-6 active:scale-95 duration-300">
-                            <div aria-hidden="true" id="line" class="m-auto h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-top group-data-[state=active]:rotate-45 group-data-[state=active]:translate-y-1.5"></div>
-                            <div aria-hidden="true" id="line2" class="m-auto mt-2 h-0.5 w-5 rounded bg-gray-950 transition duration-300 dark:bg-white origin-bottom group-data-[state=active]:-rotate-45 group-data-[state=active]:-translate-y-1"></div>
-                        </button>
-                    </div>
-                </div>
-                
-                <div id="navLayer" aria-hidden="true" class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 group-data-[state=active]:origin-top group-data-[state=active]:scale-y-100 dark:bg-gray-950/70 lg:hidden"></div>
-                
-                <div id="navlinks" class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-fit lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:dark:bg-transparent group-data-[state=active]:visible group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 lg:group-data-[state=active]:translate-y-0">
-                    <div class="w-full text-gray-600 dark:text-gray-200 lg:w-auto lg:pr-4 lg:pt-0">
-                        <div id="links-group" class="flex flex-col gap-6 tracking-wide lg:flex-row lg:gap-0 lg:text-sm">
-                            {
-                                links.map((link) => (
-                                    link.children ? (
-                                        <div class="relative group/dropdown">
-                                            <button class="flex items-center justify-between w-full hover:text-primary transition dark:hover:text-white md:px-4">
-                                                <span>{link.label}</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover/dropdown:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            </button>
-                                            
-                                            <div class="lg:absolute left-0 mt-2 w-full lg:w-56 origin-top-left scale-95 opacity-0 invisible group-hover/dropdown:scale-100 group-hover/dropdown:opacity-100 group-hover/dropdown:visible transition-all duration-300 z-50">
-                                                <div class="bg-white dark:bg-gray-900 lg:shadow-xl lg:border border-gray-100 dark:border-gray-700 rounded-xl p-2 flex flex-col gap-1">
-                                                    {link.children.map((child) => (
-                                                        <a href={child.to} class="px-4 py-3 lg:py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary transition block">
-                                                            {child.label}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ) : (
-                                        <a href={link.to} class="hover:text-primary block transition dark:hover:text-white md:px-4">
-                                            <span>{link.label}</span>
-                                        </a>
-                                    )
-                                ))
-                            }
-                        </div>
-                    </div>
-
-                    <div class="mt-12 lg:mt-0">
-                        <a href="https://wa.me/4425573314" class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-bluedsc before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                            <span class="relative text-sm font-semibold text-white">Contáctanos</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </Container>
-    </nav>
+          <div class="mt-10 flex items-center gap-3 lg:mt-0">
+            <button
+              id="theme-toggle"
+              aria-label="Cambiar tema"
+              class="hidden h-10 w-10 items-center justify-center rounded-full text-slate-600 transition hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5 lg:flex"
+            >
+              <svg class="hidden h-5 w-5 dark:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.4 6.4-1.4-1.4M7 7 5.6 5.6m12.8 0L17 7M7 17l-1.4 1.4M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/></svg>
+              <svg class="block h-5 w-5 dark:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+            </button>
+            <a
+              href="https://wa.me/524425573314?text=Hola%20DealStudio%2C%20quiero%20cotizar%20c%C3%A1maras%20de%20seguridad"
+              target="_blank"
+              rel="noopener"
+              class="relative flex h-10 w-full items-center justify-center rounded-full bg-brand-900 px-5 text-sm font-semibold text-white shadow-lg shadow-brand-900/25 transition hover:scale-105 active:scale-95 sm:w-max"
+            >
+              Cotizar gratis
+            </a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </nav>
 </header>
 
 <script>
-    let isToggled = false;
-    const navbar = document.querySelector("#nav") as HTMLElement;
-    const menuBtn = document.querySelector("#hamburger") as HTMLButtonElement;
-    const allLinks = navbar.querySelectorAll("a[href]");
+  const navbar = document.querySelector("#nav") as HTMLElement;
+  const menuBtn = document.querySelector("#hamburger") as HTMLButtonElement;
+  let isToggled = false;
 
-    function toggleNavlinks() {
-        if (isToggled) {
-            navbar.dataset.state = "active";
-        } else {
-            navbar.dataset.state = "";
-        }
-    }
+  menuBtn?.addEventListener("click", () => {
+    isToggled = !isToggled;
+    navbar.dataset.state = isToggled ? "active" : "";
+  });
 
-    menuBtn.addEventListener("click", () => {
-        isToggled = !isToggled;
-        toggleNavlinks();
+  navbar?.querySelectorAll("a[href]").forEach((link) => {
+    link.addEventListener("click", () => {
+      isToggled = false;
+      navbar.dataset.state = "";
     });
+  });
 
-    // Cerrar el menú al hacer clic en cualquier enlace (incluyendo los del submenú)
-    allLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            isToggled = false;
-            toggleNavlinks();
-        });
+  // Fondo al hacer scroll
+  const onScroll = () => {
+    navbar.dataset.scrolled = window.scrollY > 24 ? "true" : "false";
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Toggle de tema
+  const setTheme = (dark: boolean) => {
+    document.documentElement.classList.toggle("dark", dark);
+    try {
+      localStorage.setItem("ds-theme", dark ? "dark" : "light");
+    } catch (e) {}
+  };
+  document.querySelectorAll("#theme-toggle, #theme-toggle-m").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setTheme(!document.documentElement.classList.contains("dark"));
     });
+  });
 </script>

@@ -1,0 +1,88 @@
+---
+import Container from "./Container.astro";
+
+const faqs = [
+  {
+    q: "¿Cuánto cuesta instalar cámaras de seguridad?",
+    a: "El precio depende del número de cámaras, la resolución y el tipo de instalación. Por eso ofrecemos una visita técnica y cotización totalmente gratis: analizamos tu propiedad y te damos un presupuesto transparente, sin sorpresas ni costos ocultos.",
+  },
+  {
+    q: "¿Puedo ver las cámaras desde mi celular?",
+    a: "Sí. Todos nuestros sistemas incluyen configuración de acceso remoto. Podrás ver tus cámaras en vivo y revisar grabaciones desde una app en tu teléfono o tablet, desde cualquier lugar con internet.",
+  },
+  {
+    q: "¿Las cámaras funcionan de noche?",
+    a: "Claro. Trabajamos con cámaras de visión nocturna infrarroja y Full-Color que capturan imágenes nítidas incluso en total oscuridad. Elegimos el modelo ideal según la iluminación de tu propiedad.",
+  },
+  {
+    q: "¿En qué zonas dan servicio?",
+    a: "Damos servicio en la ciudad de Querétaro y toda la zona metropolitana. Si estás en una zona cercana, escríbenos por WhatsApp y con gusto validamos la cobertura.",
+  },
+  {
+    q: "¿Qué pasa si se roban el grabador o hay corte de luz?",
+    a: "Configuramos respaldo en la nube además de la grabación local, para que tu evidencia esté protegida aunque se lleven el equipo. También podemos instalar respaldo de energía (UPS) para que el sistema siga operando ante cortes.",
+  },
+  {
+    q: "¿Ofrecen mantenimiento después de la instalación?",
+    a: "Sí. Ofrecemos planes de mantenimiento preventivo (limpieza, ajuste y actualización) y soporte técnico continuo para que tu sistema siempre funcione al 100%.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+
+<section id="faq" class="scroll-mt-24 py-20 md:py-28 bg-slate-50/70 dark:bg-white/[0.02]">
+  <Container>
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-4" data-anim-group data-anim="up">
+        <span data-anim class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+          Preguntas frecuentes
+        </span>
+        <h2 data-anim class="mt-4 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
+          Resolvemos tus dudas
+        </h2>
+        <p data-anim class="mt-4 text-slate-600 dark:text-slate-300">
+          ¿No encuentras tu respuesta? Escríbenos por WhatsApp y te atendemos al momento.
+        </p>
+        <a
+          data-anim
+          href="https://wa.me/524425573314"
+          target="_blank"
+          rel="noopener"
+          class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-900 dark:text-cyanx-300"
+        >
+          Hablar con un asesor
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+
+      <div class="lg:col-span-8" data-anim-group data-anim="up">
+        <div class="divide-y divide-slate-200 dark:divide-white/10">
+          {
+            faqs.map((faq) => (
+              <details data-anim class="group py-4">
+                <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-slate-900 dark:text-white [&::-webkit-details-marker]:hidden">
+                  {faq.q}
+                  <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-900 transition-transform duration-300 group-open:rotate-45 dark:bg-white/5 dark:text-cyanx-300">
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M5 12h14"/></svg>
+                  </span>
+                </summary>
+                <p class="mt-3 pr-12 text-slate-600 dark:text-slate-400">{faq.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

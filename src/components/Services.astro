@@ -1,0 +1,81 @@
+---
+import Container from "./Container.astro";
+
+const services = [
+  {
+    title: "Cámaras para negocios",
+    desc: "Protege tu comercio, oficina o local con cobertura total, disuade robos y supervisa a tu personal en tiempo real.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/>`,
+  },
+  {
+    title: "Cámaras residenciales",
+    desc: "Cuida tu casa y a tu familia. Vigila accesos, cochera y patios desde tu celular estés donde estés.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="m3 11 9-8 9 8M5 10v10a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/>`,
+  },
+  {
+    title: "Sistemas CCTV empresariales",
+    desc: "Redes de múltiples cámaras con DVR/NVR, almacenamiento robusto y centro de monitoreo para bodegas e industria.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M2 7h20v10H2zM6 7V5h12v2M8 21h8M12 17v4"/>`,
+  },
+  {
+    title: "Monitoreo remoto y nube",
+    desc: "Acceso 24/7 desde la app. Respaldo en la nube y local para que nunca pierdas la evidencia que importa.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M7 18a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 18 18zM12 21v-6m0 0-2 2m2-2 2 2"/>`,
+  },
+  {
+    title: "Control de acceso",
+    desc: "Cerraduras inteligentes, videoportero y reconocimiento facial para decidir quién entra y quién no.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2ZM8 11V7a4 4 0 1 1 8 0v4"/>`,
+  },
+  {
+    title: "Mantenimiento y soporte",
+    desc: "Limpieza, ajuste y actualización de tus equipos. Soporte técnico continuo para que todo siga funcionando.",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2-2 2.8-2.8Z"/>`,
+  },
+];
+---
+
+<section id="servicios" class="scroll-mt-24 py-20 md:py-28">
+  <Container>
+    <div class="mx-auto max-w-2xl text-center" data-anim-group data-anim="up">
+      <span data-anim class="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-sm font-semibold text-brand-900 dark:bg-white/5 dark:text-cyanx-300">
+        Nuestros servicios
+      </span>
+      <h2 data-anim class="mt-4 text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
+        Soluciones de seguridad a tu medida
+      </h2>
+      <p data-anim class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+        Desde una cámara para tu hogar hasta redes de videovigilancia para empresas. Diseñamos, instalamos y damos soporte.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" data-anim-group data-anim="up">
+      {
+        services.map((s) => (
+          <article
+            data-anim
+            class="group relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-8 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-cyanx-300/60 hover:shadow-soft-lg dark:border-white/10 dark:bg-slate-900/60 dark:hover:border-cyanx-400/30"
+          >
+            <div aria-hidden="true" class="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-cyanx-400/10 blur-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+            <div class="relative">
+              <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50 text-brand-900 transition-colors duration-300 group-hover:bg-brand-900 group-hover:text-white dark:bg-white/5 dark:text-cyanx-300">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" set:html={s.icon} />
+              </div>
+              <h3 class="mt-5 text-xl font-bold text-slate-900 dark:text-white">{s.title}</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">{s.desc}</p>
+              <a
+                href="https://wa.me/524425573314"
+                target="_blank"
+                rel="noopener"
+                class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-900 opacity-0 transition-all duration-300 group-hover:opacity-100 dark:text-cyanx-300"
+              >
+                Más información
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>
