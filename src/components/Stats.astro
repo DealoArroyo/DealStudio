@@ -2,8 +2,6 @@
 import Container from "./Container.astro";
 
 const stats = [
-  { value: 8, suffix: "+", label: "Años de experiencia" },
-  { value: 500, suffix: "+", label: "Cámaras instaladas" },
   { value: 100, suffix: "%", label: "Clientes satisfechos" },
   { value: 24, suffix: "h", label: "Respuesta a soporte" },
 ];
@@ -31,7 +29,7 @@ const sectors = [
 
       <div class="relative">
         <!-- Contadores -->
-        <div class="grid grid-cols-2 gap-8 border-b border-white/10 pb-12 md:grid-cols-4" data-anim-group data-anim="zoom">
+        <div class="mx-auto grid max-w-md grid-cols-2 gap-8 border-b border-white/10 pb-12" data-anim-group data-anim="zoom">
           {
             stats.map((s) => (
               <div data-anim class="text-center">
